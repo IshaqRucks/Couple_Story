@@ -3,16 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const opening = document.getElementById("opening");
     const invitation = document.getElementById("invitation");
     const openButton = document.getElementById("openInvitation");
+    const weddingMusic = document.getElementById("weddingMusic");
+
 
     /* =====================================
-       OPEN INVITATION
+       OPEN INVITATION + START MUSIC
     ====================================== */
 
     if (openButton) {
         openButton.addEventListener("click", () => {
 
-            // Fade out opening
+            /* Start wedding music */
+            if (weddingMusic) {
+
+                weddingMusic.volume = 0.5;
+
+                weddingMusic.play().catch(error => {
+                    console.log("Music could not start:", error);
+                });
+
+            }
+
+
+            /* Fade out opening */
             opening.classList.add("opening-close");
+
 
             setTimeout(() => {
 
@@ -20,15 +35,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 invitation.classList.remove("hidden");
 
-                // Start at first invitation section
+
+                /* Start at first invitation section */
                 window.scrollTo({
                     top: 0,
                     behavior: "instant"
                 });
 
             }, 700);
+
         });
     }
+
 
 
     /* =====================================
@@ -38,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextButtons =
         document.querySelectorAll("[data-next]");
 
+
     nextButtons.forEach(button => {
 
         button.addEventListener("click", () => {
@@ -45,8 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const targetId =
                 button.getAttribute("data-next");
 
+
             const target =
                 document.getElementById(targetId);
+
 
             if (target) {
 
@@ -62,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+
     /* =====================================
        KEYBOARD SUPPORT
     ====================================== */
@@ -72,10 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
             event.key === "Enter" &&
             document.activeElement === openButton
         ) {
+
             openButton.click();
+
         }
 
     });
+
 
 
     /* =====================================
@@ -85,63 +110,97 @@ document.addEventListener("DOMContentLoaded", () => {
     const nikahDate =
         new Date("October 25, 2026 11:00:00").getTime();
 
+
     function updateCountdown() {
 
-        const now = new Date().getTime();
+        const now =
+            new Date().getTime();
+
 
         const difference =
             nikahDate - now;
 
 
-        // If Nikah time has arrived
+
+        /* If Nikah time has arrived */
+
         if (difference <= 0) {
 
-            document.getElementById("days").textContent = "00";
-            document.getElementById("hours").textContent = "00";
-            document.getElementById("minutes").textContent = "00";
-            document.getElementById("seconds").textContent = "00";
+            document.getElementById("days").textContent =
+                "00";
+
+            document.getElementById("hours").textContent =
+                "00";
+
+            document.getElementById("minutes").textContent =
+                "00";
+
+            document.getElementById("seconds").textContent =
+                "00";
 
             return;
+
         }
 
 
-        // Calculate remaining time
-        const days = Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        );
 
-        const hours = Math.floor(
-            (difference / (1000 * 60 * 60)) % 24
-        );
+        /* Calculate remaining time */
 
-        const minutes = Math.floor(
-            (difference / (1000 * 60)) % 60
-        );
-
-        const seconds = Math.floor(
-            (difference / 1000) % 60
-        );
+        const days =
+            Math.floor(
+                difference / (1000 * 60 * 60 * 24)
+            );
 
 
-        // Display countdown
+        const hours =
+            Math.floor(
+                (difference / (1000 * 60 * 60)) % 24
+            );
+
+
+        const minutes =
+            Math.floor(
+                (difference / (1000 * 60)) % 60
+            );
+
+
+        const seconds =
+            Math.floor(
+                (difference / 1000) % 60
+            );
+
+
+
+        /* Display countdown */
+
         document.getElementById("days").textContent =
             String(days).padStart(2, "0");
+
 
         document.getElementById("hours").textContent =
             String(hours).padStart(2, "0");
 
+
         document.getElementById("minutes").textContent =
             String(minutes).padStart(2, "0");
 
+
         document.getElementById("seconds").textContent =
             String(seconds).padStart(2, "0");
+
     }
 
 
-    // Run immediately
+
+    /* =====================================
+       START COUNTDOWN
+    ====================================== */
+
     updateCountdown();
 
-    // Update every second
+
+    /* Update every second */
+
     setInterval(updateCountdown, 1000);
 
 });
