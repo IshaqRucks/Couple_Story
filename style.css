@@ -1,0 +1,1083 @@
+/* =========================================
+   ROOT
+========================================= */
+
+:root {
+    --burgundy: #580813;
+    --burgundy-dark: #3b050c;
+    --burgundy-light: #800a1d;
+    --gold: #d3c3a0;
+    --gold-dark: #8f7445;
+    --ivory: #fffdf8;
+    --white: #ffffff;
+    --text: #3b2929;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--ivory);
+    color: var(--text);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   OPENING SCREEN
+========================================= */
+
+.opening {
+    min-height: 100svh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background-image: url("background.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.opening-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.10),
+            rgba(255,255,255,0.10)
+        );
+
+    pointer-events: none;
+}
+
+.opening-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.bismillah {
+    font-family: "Amiri", serif;
+    font-size: 25px;
+
+    color: var(--burgundy);
+
+    margin-bottom: 12px;
+}
+
+.opening-intro {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    line-height: 1.5;
+
+    color: var(--burgundy);
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   OPENING SEAL
+========================================= */
+
+.invitation-seal {
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.96) 55%,
+            rgba(211,195,160,0.25) 100%
+        );
+
+    box-shadow:
+        0 12px 35px rgba(88, 8, 19, 0.18),
+        inset 0 0 0 7px rgba(211,195,160,0.18);
+
+    cursor: pointer;
+
+    color: var(--burgundy);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.invitation-seal:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 18px 45px rgba(88, 8, 19, 0.25);
+}
+
+.seal-top {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+.seal-names {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 60px;
+    font-weight: 600;
+
+    line-height: 0.9;
+}
+
+.seal-names span {
+    font-size: 29px;
+    font-weight: 500;
+    margin: 0 5px;
+
+    color: var(--gold-dark);
+}
+
+.seal-bottom {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 7px;
+    letter-spacing: 1.8px;
+
+    margin-top: 12px;
+}
+
+.tap-text {
+    margin-top: 22px;
+
+    font-family: "Montserrat", sans-serif;
+
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    color: #7a5b2e;
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%, 100% {
+        opacity: .45;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   INVITATION
+========================================= */
+
+.hidden {
+    display: none;
+}
+
+.invitation {
+    width: 100%;
+}
+
+
+/* =========================================
+   EVERY SECTION
+========================================= */
+
+.page {
+    min-height: 100svh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 70px 25px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255,255,255,0.18);
+
+    pointer-events: none;
+}
+
+.page-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(90%, 650px);
+
+    padding: 30px 15px;
+}
+
+.narrow {
+    max-width: 560px;
+}
+
+
+/* =========================================
+   BACKGROUNDS
+========================================= */
+
+.page-names {
+    background-image: url("background.jpeg");
+}
+
+.page-invitation {
+    background-image: url("background.jpeg");
+}
+
+.page-couple {
+    background-image: url("background.jpeg");
+}
+
+.page-details {
+    background-image: url("background.jpeg");
+}
+
+.page-closing {
+    background-image: url("background.jpeg");
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.small-bismillah {
+    font-size: 32px;
+
+    color: var(--burgundy);
+
+    margin-bottom: 15px;
+}
+
+.eyebrow,
+.section-label {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-align: center;
+
+    color: #7a5b2e;
+
+    font-weight: 800;
+
+    margin: 0 0 12px;
+
+    text-transform: uppercase;
+}
+.invited-title {
+    font-size: 28px !important;
+    font-weight: 600;
+}
+
+.couple-names {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 10vw, 72px);
+
+    line-height: .95;
+
+    font-weight: 500;
+
+    color: var(--burgundy);
+
+    letter-spacing: 1px;
+}
+
+.couple-names span {
+    display: block;
+
+    font-size: 25px;
+
+    color: var(--gold-dark);
+
+    margin: 10px 0;
+}
+
+h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--burgundy);
+
+    font-size: clamp(42px, 10vw, 64px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+
+    letter-spacing: 1px;
+}
+
+.body-text {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.65;
+
+    color: #443333;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   ORNAMENT
+========================================= */
+
+.ornament {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--gold-dark);
+
+    font-size: 23px;
+
+    margin: 20px 0 28px;
+}
+
+.ornament span {
+    width: 45px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+
+/* =========================================
+   QURAN
+========================================= */
+
+.quran-verse {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    font-style: italic;
+
+    color: var(--burgundy);
+
+    margin-top: 25px;
+}
+
+.verse-reference {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-top: 10px;
+
+    color: #7a5b2e;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.next-button {
+    margin-top: 35px;
+
+    padding: 15px 30px;
+
+    border: 1px solid var(--burgundy);
+
+    background: var(--burgundy);
+
+    color: var(--white);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 18px rgba(88, 8, 19, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.next-button:hover {
+    background: var(--burgundy-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(88, 8, 19, 0.32);
+}
+
+
+/* =========================================
+   COUPLE
+========================================= */
+
+.couple-layout {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+}
+
+.person-card {
+    padding: 25px 15px;
+
+    background: rgba(255,255,255,.78);
+
+    border: 1px solid rgba(211,195,160,.65);
+
+    backdrop-filter: blur(4px);
+}
+
+.person-label {
+    font-family: "Montserrat", sans-serif;
+
+    color: var(--gold-dark);
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
+
+    text-transform: uppercase;
+}
+
+.person-card h2 {
+    margin-bottom: 14px;
+
+    font-size: clamp(44px, 11vw, 60px);
+
+    font-weight: 700;
+
+    color: var(--burgundy);
+
+    letter-spacing: 1px;
+
+    line-height: 1;
+}
+
+.person-card p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    line-height: 1.45;
+}
+
+.groom-business {
+    font-family: Georgia, "Times New Roman";
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.8px !important;
+    text-transform: uppercase;
+    color:var(--burgundy-dark) !important;
+    margin: 4px 0 20px !important
+
+}
+
+.groom-parents {
+    font-family: 12px !important;
+    line-height: 1.5;
+    font-family: "Montserrat", sans-serif;
+}
+
+.grandparents {
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(211,195,160,.5);
+}
+
+.grandparents strong {
+    display: block;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    color: var(--burgundy);
+
+    margin-top: 12px;
+
+
+}
+
+.grandparents p {
+    font-size: 16px;
+
+    margin-top: 5px;
+}
+
+.couple-divider {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    color: var(--gold-dark);
+}
+
+
+/* =========================================
+   NIKAH DETAILS
+========================================= */
+
+.page-details {
+    text-align: center;
+}
+
+
+/* MAIN DATE */
+
+.nikah-heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: 28px !important;
+    font-weight: 500;
+    text-align: center;
+    color: #7a5b2e;
+}
+
+.details-title {
+    font-family: Georgia, "Times New Roman";
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    color: var(--burgundy);
+
+    margin-bottom: 35px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 2px 8px rgba(88, 8, 19, 0.12);
+}
+.detail-label{
+display: block;
+margin-bottom: 6px;
+font-family: "Montserrat", sans-serif;
+font-size: 15px;
+font-weight: 800;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: #580813 !important;
+}
+
+.islamic-date {
+    margin: -8px 0 25px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #7a5b2e;
+}
+
+
+/* =========================================
+   DATE / TIME / VENUE
+========================================= */
+
+.nikah-details {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    align-items: start;
+
+    border-top: 1px solid rgba(143,116,69,.45);
+    border-bottom: 1px solid rgba(143,116,69,.45);
+    background: rgba(255,255,255,.35);
+}
+
+.nikah-detail {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 5px;
+}
+
+.nikah-detail + .nikah-detail {
+    border-left: 1px solid rgba(143,116,69,.35);
+}
+
+/* DAY / VENUE / TIME */
+.detail-label {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #7a5b2e !important;
+    margin-bottom: 8px;
+}
+
+/* SUNDAY / AYSHA MAHAL / 11:00 AM */
+.nikah-detail strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #7a5b2e !important;
+}
+
+.venue-location {
+    margin-top: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 8px;
+    line-height: 1.3;
+    color: #7a5b2e !important;
+}
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown-area {
+    width: 100%;
+
+    max-width: 450px;
+
+    margin: 32px auto 0;
+
+    padding: 24px 5px;
+
+    border-top: 1px solid rgba(143,116,69,.55);
+
+    border-bottom: 1px solid rgba(143,116,69,.55);
+
+    background: rgba(255,255,255,.30);
+}
+
+.countdown-title {
+    margin: 0 0 22px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: var(--gold-dark);
+}
+
+
+/* COUNTDOWN ROW */
+
+.countdown {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* EACH COUNTDOWN NUMBER */
+
+.countdown-item {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.countdown-item span {
+    font-family: Georgia, "Times New Roman";
+
+    font-size: 38px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    color: var(--burgundy);
+}
+
+.countdown-item small {
+    margin-top: 8px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+    color: var(--gold-dark);
+}
+
+
+/* VERTICAL LINES */
+
+.countdown-line {
+    width: 1px;
+
+    height: 35px;
+
+    background: rgba(143,116,69,.45);
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   GOOGLE MAPS
+========================================= */
+
+.maps-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 32px;
+
+    padding: 15px 28px;
+
+    background: #8f2634;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 6px 18px rgba(88, 8, 19, 0.20);
+
+    transition: all 0.3s ease;
+}
+
+.maps-button:hover {
+    background: var(--burgundy-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(88, 8, 19, 0.30);
+}
+
+
+/* =========================================
+   DUA
+========================================= */
+
+.dua {
+    margin-top: 35px;
+
+    padding: 25px 15px;
+
+    border-top: 1px solid var(--gold);
+
+    border-bottom: 1px solid var(--gold);
+}
+
+.dua-arabic {
+    font-family: "Amiri", serif;
+
+    font-size: 27px;
+
+    line-height: 1.8;
+
+    color: var(--burgundy);
+
+    margin-bottom: 18px;
+}
+
+.dua-translation {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    font-style: italic;
+}
+
+
+/* =========================================
+   FINAL NAMES
+========================================= */
+
+.final-names {
+    margin-top: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--burgundy);
+
+    font-size: 28px;
+
+    letter-spacing: 1px;
+}
+
+.final-names .ampersand {
+    font-size: 23px;
+
+    color: var(--gold-dark);
+}
+
+.closing-line {
+    margin-top: 18px;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    color: #6b4a28;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .page {
+        padding: 50px 18px;
+    }
+
+    .opening-content {
+        padding: 20px;
+    }
+
+
+    /* Opening seal */
+
+    .invitation-seal {
+        width: 220px;
+        height: 220px;
+    }
+
+    .seal-names {
+        font-size: 64px;
+    }
+
+
+    /* Body */
+
+    .body-text {
+        font-size: 18px;
+    }
+
+
+    /* Couple */
+
+    .person-card {
+        padding: 22px 12px;
+    }
+
+
+    /* Nikah */
+
+    .details-title {
+        font-size: 30px;
+
+        margin-bottom: 30px;
+    }
+
+        .nikah-details {
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .nikah-detail {
+        min-height: 100px;
+        padding: 14px 3px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .detail-label {
+        font-size: 9px !important;
+        letter-spacing: 1.5px;
+        margin-bottom: 7px;
+    }
+
+    .nikah-detail strong {
+        font-size: 14px;
+        text-align: center;
+    }
+
+
+    .venue-location {
+        font-size: 8px;
+    
+        text-align: center;
+    }
+
+
+
+
+    /* Countdown */
+
+    .countdown-area {
+        padding: 22px 2px;
+
+        margin-top: 28px;
+    }
+
+    .countdown-title {
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+    .countdown-item span {
+        font-size: 33px;
+    }
+
+    .countdown-item small {
+        font-size: 6px;
+
+        letter-spacing: 1px;
+    }
+
+    .countdown-line {
+        height: 28px;
+    }
+
+
+    /* Directions */
+
+    .page-details .maps-button {
+        margin-top: 28px;
+
+        padding: 14px 24px;
+    }
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 768px) {
+
+    .couple-layout {
+        grid-template-columns: 1fr 60px 1fr;
+
+        align-items: center;
+    }
+
+    .couple-layout .next-button {
+        grid-column: 1 / -1;
+
+        justify-self: center;
+    }
+}
