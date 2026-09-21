@@ -554,44 +554,6 @@ h2 {
     font-family: "Montserrat", sans-serif;
 }
 
-.grandparents {
-    margin-top: 20px;
-
-    padding-top: 15px;
-
-    border-top: 1px solid rgba(211,195,160,.5);
-}
-
-.grandparents strong {
-    display: block;
-
-    font-family: "Montserrat", sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 1.5px;
-
-    color: var(--burgundy);
-
-    margin-top: 12px;
-
-
-}
-
-.grandparents p {
-    font-size: 16px;
-
-    margin-top: 5px;
-}
-
-.couple-divider {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 32px;
-
-    color: var(--gold-dark);
-}
-
 
 /* =========================================
    NIKAH DETAILS
